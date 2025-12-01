@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Barakah Dental Supplies</title>
+    <link rel="stylesheet" href="assets/css/style.css ">
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary: #64a6bd;
+        --secondary: #999999;
+      }
+
+      .title {
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .payment-box {
+        border: 1px solid #e1e1e1;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
+
+      .payment-box h5 {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .thumb {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-right: 8px;
+        border: 1px solid #ccc;
+      }
+
+      .btn-primary {
+        background-color: var(--primary) !important;
+        border-color: var(--primary) !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light custom-nav rounded-nav">
+  <div class="container justify-content-center">
+    <div class="nav-box shadow-lg">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/LOGO.png" alt="Barakah Logo" class="nav-logo">
+      </a>
+
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse animate__animated animate__fadeInDown" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link nav-anim" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="contact.html">Contact</a></li>
+
+          <li class="nav-item ms-2">
+            <a class="btn btn-light login-btn" href="login.html">Login</a>
+          </li>
+
+          <li class="nav-item ms-2">
+            <a class="btn btn-outline-light cart-btn position-relative" href="cart.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              </svg>
+              <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    <!-- CHECKOUT -->
+    <div class="container mt-5 mb-5">
+      <h2 class="title mb-4">Checkout</h2>
+
+      <form id="checkoutForm">
+        <div class="row">
+          <!-- Shipping Form -->
+          <div class="col-lg-7 mb-4">
+            <div class="card shadow-sm p-4">
+              <h5 class="mb-3" style="color: var(--primary); font-weight: 600">
+                Shipping Information
+              </h5>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Full Name</label>
+                  <input required type="text" class="form-control" id="name" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Phone</label>
+                  <input
+                    required
+                    type="text"
+                    class="form-control"
+                    id="phone"
+                    pattern="^[0-9]{11}$"
+                    placeholder="11-digit number"
+                  />
+                </div>
+
+                <div class="col-12 mb-3">
+                  <label class="form-label">Address</label>
+                  <textarea
+                    required
+                    class="form-control"
+                    id="address"
+                    rows="2"
+                  ></textarea>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">City</label>
+                  <input required type="text" class="form-control" id="city" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">State</label>
+                  <input required type="text" class="form-control" id="state" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">ZIP Code</label>
+                  <input
+                    required
+                    type="text"
+                    class="form-control"
+                    id="zip"
+                    pattern="^[0-9]{5}$"
+                    placeholder="5 digits"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Section -->
+          <div class="col-lg-5">
+            <div class="payment-box shadow-sm mb-4">
+              <h5>Payment Options</h5>
+
+              <!-- COD -->
+              <div class="form-check mt-3">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="paymentMethod"
+                  id="cod"
+                  checked
+                />
+                <label class="form-check-label" for="cod"
+                  >Cash on Delivery</label
+                >
+              </div>
+
+              <!-- Online -->
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="paymentMethod"
+                  id="online"
+                />
+                <label class="form-check-label" for="online"
+                  >Online Payment (Bank / Easypaisa)</label
+                >
+              </div>
+
+              <!-- Payment Instructions -->
+              <div id="paymentInfo" class="mt-3 d-none">
+                <div class="alert alert-info">
+                  <strong>Bank Account:</strong> 1234-5678-9012<br />
+                  <strong>Easypaisa:</strong> 0300-1234567<br />
+                  Send payment & upload screenshot below.
+                </div>
+
+                <!-- Screenshot Upload -->
+                <label class="form-label">Upload Payment Screenshot</label>
+                <input
+                  type="file"
+                  id="screenshot"
+                  class="form-control"
+                  multiple
+                  accept="image/*"
+                />
+
+                <div id="preview" class="d-flex mt-2"></div>
+              </div>
+            </div>
+
+            <!-- Place Order Button -->
+            <button class="btn btn-primary w-100 py-2 fw-bold" type="submit">
+              Place Order
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const cod = document.getElementById("cod");
+      const online = document.getElementById("online");
+      const paymentInfo = document.getElementById("paymentInfo");
+      const screenshot = document.getElementById("screenshot");
+      const preview = document.getElementById("preview");
+
+      // Toggle payment upload section
+      online.addEventListener("change", () =>
+        paymentInfo.classList.remove("d-none")
+      );
+      cod.addEventListener("change", () => paymentInfo.classList.add("d-none"));
+
+      // Screenshot previews + 5MB limit
+      screenshot.addEventListener("change", function () {
+        preview.innerHTML = "";
+        [...this.files].forEach((file) => {
+          if (file.size > 5 * 1024 * 1024) {
+            alert(`${file.name} exceeds 5MB limit`);
+            this.value = "";
+            preview.innerHTML = "";
+            return;
+          }
+
+          const img = document.createElement("img");
+          img.src = URL.createObjectURL(file);
+          img.classList.add("thumb");
+          preview.appendChild(img);
+        });
+      });
+
+      // Form submission
+      document
+        .getElementById("checkoutForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          alert("✅ Order placed successfully! We will contact you shortly.");
+          this.reset();
+          preview.innerHTML = "";
+          paymentInfo.classList.add("d-none");
+          cod.checked = true;
+        });
+    </script>
+
+    <!-- ===================== FOOTER ===================== -->
+    <!-- dynamic footer -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <footer class="modern-footer pt-5">
+      <div class="container footer-content">
+        <div class="row g-4 mb-5">
+          <!-- Company Info -->
+          <div class="col-lg-4 col-md-6">
+            <a href="#" class="footer-logo d-block mb-4">
+              Barakah Dental Supplies<span class="text-primary"></span>
+            </a>
+
+            <p class="text-muted mb-4">
+              Your trusted partner for premium dental instruments, equipment,
+              and supplies across Pakistan.
+            </p>
+
+            <ul class="contact-info mb-4">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Karachi, Pakistan<br />Korangi Industrial Area</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>+92 300 0000000</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>support@barakahdental.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-4 col-md-6">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="quick-links">
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="blog.html">News & Articles</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Customer Support</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-12">
+            <h3 class="footer-title">Stay Updated</h3>
+            <p class="text-muted mb-4">
+              Subscribe for updates on new dental products, discounts, and
+              industry news.
+            </p>
+
+            <form class="mb-4">
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control newsletter-input"
+                  placeholder="Your email address"
+                />
+              </div>
+              <button type="submit" class="btn btn-subscribe text-white w-100">
+                Subscribe Now
+              </button>
+            </form>
+
+            <div class="social-links">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row py-4">
+            <div class="col-md-6 text-center text-md-start">
+              <p>
+                &copy; <span id="year"></span> Barakah Dental Supplies. All
+                rights reserved.
+              </p>
+            </div>
+
+            <div class="col-md-6 text-center text-md-end">
+              <p>
+                Made with <i class="fas fa-heart text-danger"></i> by Barakah
+                Dental
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    // auto-select all major sections & elements
+    document.querySelectorAll(
+        "section, .container, .category-card, .featured-card, .single-testimonial, footer"
+    ).forEach(el => {
+        el.classList.add("hidden");
+        observer.observe(el);
+    });
+});
+</script>
+
+  </body>
+</html>

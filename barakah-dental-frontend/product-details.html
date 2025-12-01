@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail – Barakah Dental Supplies</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  </head>
+
+  <body>
+    <!-- dynamic header -->
+<nav class="navbar navbar-expand-lg navbar-light custom-nav rounded-nav">
+  <div class="container justify-content-center">
+    <div class="nav-box shadow-lg">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/LOGO.png" alt="Barakah Logo" class="nav-logo">
+      </a>
+
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse animate__animated animate__fadeInDown" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link nav-anim" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="contact.html">Contact</a></li>
+
+          <li class="nav-item ms-2">
+            <a class="btn btn-light login-btn" href="login.html">Login</a>
+          </li>
+
+          <li class="nav-item ms-2">
+            <a class="btn btn-outline-light cart-btn position-relative" href="cart.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              </svg>
+              <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+<div class="container mt-5 product-page">
+    <div class="row g-4">
+        <!-- Product Images -->
+        <div class="col-md-6">
+            <img src="assets/images/product1.jpg" 
+                 alt="Dental Supplies" 
+                 class="img-fluid rounded mb-3 product-image" 
+                 id="mainImage">
+            <div class="d-flex justify-content-start gap-2">
+                <img src="assets/images/product1.jpg " 
+                     alt="Thumbnail 1" 
+                     class="thumbnail rounded active" 
+                     onclick="changeImage(event, this.src)">
+                <img src="assets/images/product2.jpg" 
+                     alt="Thumbnail 2" 
+                     class="thumbnail rounded" 
+                     onclick="changeImage(event, this.src)">
+                <img src="assets/images/product3.jpg" 
+                     alt="Thumbnail 3" 
+                     class="thumbnail rounded" 
+                     onclick="changeImage(event, this.src)">
+            </div>
+        </div>       
+        <!-- Product Details -->
+        <div class="col-md-6">
+            <h2 class="mb-2">Premium Dental Handpiece Kit</h2>
+            <p class="text-muted mb-3">SKU: DHK-500</p>
+
+            <!-- Price -->
+            <div class="mb-3 d-flex align-items-center gap-3">
+                <span class="h4 text-primary">$249.99</span>
+                <span class="text-muted"><s>$299.99</s></span>
+            </div>
+
+            <!-- Rating -->
+            <div class="mb-3">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-half text-warning"></i>
+                <span class="ms-2 text-muted">4.6 (85 reviews)</span>
+            </div>
+
+            <p class="mb-4 text-secondary">
+                High-quality dental handpiece kit designed for precision, durability, and smooth operation. Ideal for dental clinics and professional dentists.
+            </p>
+
+            <!-- Color / Type Selection -->
+            <div class="mb-4">
+                <h5>Type:</h5>
+                <div class="btn-group" role="group" aria-label="Type selection">
+                    <input type="radio" class="btn-check" name="type" id="standard" autocomplete="off" checked>
+                    <label class="btn btn-outline-dark" for="standard">Standard</label>
+                    <input type="radio" class="btn-check" name="type" id="turbo" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="turbo">Turbo</label>
+                    <input type="radio" class="btn-check" name="type" id="silent" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="silent">Silent</label>
+                </div>
+            </div>
+
+            <!-- Quantity -->
+            <div class="mb-4 d-flex align-items-center gap-3">
+                <label for="quantity" class="form-label mb-0">Quantity:</label>
+                <input type="number" class="form-control" id="quantity" value="1" min="1" style="width: 80px;">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="mb-4 d-flex flex-wrap gap-2">
+                <button class="btn btn-primary btn-lg">
+                    <i class="bi bi-cart-plus"></i> Add to Cart
+                </button>
+                <button class="btn btn-outline-secondary btn-lg">
+                    <i class="bi bi-heart"></i> Add to Wishlist
+                </button>
+            </div>
+
+            <!-- Features -->
+            <div class="mt-4">
+                <h5>Key Features:</h5>
+                <ul class="list-unstyled text-secondary">
+                    <li>• Precision-engineered for smooth operation</li>
+                    <li>• Long-lasting durable components</li>
+                    <li>• Lightweight ergonomic design</li>
+                    <li>• Suitable for all dental procedures</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function changeImage(event, src) {
+        document.getElementById('mainImage').src = src;
+        document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+</script>
+
+    <!-- ===================== FOOTER ===================== -->
+    <!-- dynamic footer -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <footer class="modern-footer pt-5">
+      <div class="container footer-content">
+        <div class="row g-4 mb-5">
+          <!-- Company Info -->
+          <div class="col-lg-4 col-md-6">
+            <a href="#" class="footer-logo d-block mb-4">
+              Barakah Dental Supplies<span class="text-primary"></span>
+            </a>
+
+            <p class="text-muted mb-4">
+              Your trusted partner for premium dental instruments, equipment,
+              and supplies across Pakistan.
+            </p>
+
+            <ul class="contact-info mb-4">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Karachi, Pakistan<br />Korangi Industrial Area</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>+92 300 0000000</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>support@barakahdental.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-4 col-md-6">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="quick-links">
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="blog.html">News & Articles</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Customer Support</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-12">
+            <h3 class="footer-title">Stay Updated</h3>
+            <p class="text-muted mb-4">
+              Subscribe for updates on new dental products, discounts, and
+              industry news.
+            </p>
+
+            <form class="mb-4">
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control newsletter-input"
+                  placeholder="Your email address"
+                />
+              </div>
+              <button type="submit" class="btn btn-subscribe text-white w-100">
+                Subscribe Now
+              </button>
+            </form>
+
+            <div class="social-links">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row py-4">
+            <div class="col-md-6 text-center text-md-start">
+              <p>
+                &copy; <span id="year"></span> Barakah Dental Supplies. All
+                rights reserved.
+              </p>
+            </div>
+
+            <div class="col-md-6 text-center text-md-end">
+              <p>
+                Made with <i class="fas fa-heart text-danger"></i> by Barakah
+                Dental
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/site.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    // auto-select all major sections & elements
+    document.querySelectorAll(
+        "section, .container, .category-card, .featured-card, .single-testimonial, footer"
+    ).forEach(el => {
+        el.classList.add("hidden");
+        observer.observe(el);
+    });
+});
+</script>
+
+  </body>
+</html>

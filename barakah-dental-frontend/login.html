@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Barakah Dental Supplies</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+      body {
+        background: #ffffff;
+      }
+
+      .card-img-left {
+        width: 45%;
+        background: scroll center
+          url("https://informationhub382894112.wordpress.com/wp-content/uploads/2023/12/dental-supplies.jpg");
+        background-size: cover;
+      }
+
+      .btn-login {
+        font-size: 0.9rem;
+        letter-spacing: 0.05rem;
+        padding: 0.75rem 1rem;
+      }
+
+      .btn-google {
+        color: white !important;
+        background-color: #ea4335;
+      }
+
+      .btn-facebook {
+        color: white !important;
+        background-color: #3b5998;
+      }
+    </style>
+  </head>
+
+  <body>
+<nav class="navbar navbar-expand-lg navbar-light custom-nav rounded-nav">
+  <div class="container justify-content-center">
+    <div class="nav-box shadow-lg">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/LOGO.png" alt="Barakah Logo" class="nav-logo">
+      </a>
+
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse animate__animated animate__fadeInDown" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link nav-anim" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="contact.html">Contact</a></li>
+
+          <li class="nav-item ms-2">
+            <a class="btn btn-light login-btn" href="login.html">Login</a>
+          </li>
+
+          <li class="nav-item ms-2">
+            <a class="btn btn-outline-light cart-btn position-relative" href="cart.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              </svg>
+              <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <div class="row">
+        <!-- Centered Logo -->
+        <div class="text-center my-4">
+          <img src="assets/images/LOGO.png" style="width: 40%" alt="" />
+        </div>
+
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div
+            class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden"
+          >
+            <div class="card-img-left d-none d-md-flex"></div>
+
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title text-center mb-5 fw-light fs-5">
+                Register
+              </h5>
+
+              <form>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInputUsername"
+                    placeholder="myusername"
+                    required
+                    autofocus
+                  />
+                  <label for="floatingInputUsername">Username</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingInputEmail"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInputEmail">Email address</label>
+                </div>
+
+                <hr />
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPasswordConfirm"
+                    placeholder="Confirm Password"
+                  />
+                  <label for="floatingPasswordConfirm">Confirm Password</label>
+                </div>
+
+                <div class="d-grid mb-2">
+                  <button
+                    class="btn btn-lg btn-primary btn-login fw-bold text-uppercase"
+                    type="submit"
+                  >
+                    Register
+                  </button>
+                </div>
+
+                <a class="d-block text-center mt-2 small" href="#"
+                  >Have an account? Sign In</a
+                >
+
+                <hr class="my-4" />
+
+                <div class="d-grid mb-2">
+                  <button
+                    class="btn btn-lg btn-google btn-login fw-bold text-uppercase"
+                    type="submit"
+                  >
+                    <i class="fab fa-google me-2"></i> Sign up with Google
+                  </button>
+                </div>
+
+                <div class="d-grid">
+                  <button
+                    class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase"
+                    type="submit"
+                  >
+                    <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    // auto-select all major sections & elements
+    document.querySelectorAll(
+        "section, .container, .category-card, .featured-card, .single-testimonial, footer"
+    ).forEach(el => {
+        el.classList.add("hidden");
+        observer.observe(el);
+    });
+});
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>

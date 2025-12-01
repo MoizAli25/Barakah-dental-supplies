@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barakah Dental Supplies – Home</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+       <link rel="stylesheet" href="https://cdn.ayroui.com/1.0/css/tiny-slider.css" />
+
+
+
+    <style>
+
+
+          :root {
+            --primary: #64a6bd;
+            --primary-dark: #4f8699; /* optional darker shade for hover, keeps same design */
+            
+            --white: #ffffff;
+            --secondary: #ffffff; /* if you want this alias */
+
+            --gray-1: #999999; 
+            --gray-2: #999999;
+            --gray-3: #999999;
+            --gray-4: #999999;  /* used in your code */
+          }
+          
+    </style>
+</head>
+
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<!-- dynamic header -->
+<nav class="navbar navbar-expand-lg navbar-light custom-nav rounded-nav">
+  <div class="container justify-content-center">
+    <div class="nav-box shadow-lg">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/LOGO.png" alt="Barakah Logo" class="nav-logo">
+      </a>
+
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse animate__animated animate__fadeInDown" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link nav-anim" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="contact.html">Contact</a></li>
+
+          <li class="nav-item ms-2">
+            <a class="btn btn-light login-btn" href="login.html">Login</a>
+          </li>
+
+          <li class="nav-item ms-2">
+            <a class="btn btn-outline-light cart-btn position-relative" href="cart.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              </svg>
+              <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<!-- ===================== HERO SLIDER ===================== -->
+<!--====== SLIDER ONE PART START ======-->
+<section class="slider-area slider-one mt-5">
+   <div class="bd-example">
+      <div id="carouselOne" class="carousel slide" data-bs-ride="carousel">
+         <ol class="carousel-indicators">
+            <li data-bs-target="#carouselOne" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselOne" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselOne" data-bs-slide-to="2"></li>
+         </ol>
+
+         <div class="carousel-inner">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item bg_cover active"
+               style="background-image: url(assets/images/banner1.jpg);">
+               <div class="carousel-caption">
+                  <div class="container">
+                     <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-7 col-sm-10">
+                           <h2 class="carousel-title">Premium Dental Supplies for Modern Clinics</h2>
+                           <p class="text">
+                              From basic tools to advanced equipment — get high-quality dental supplies trusted by professionals worldwide.
+                           </p>
+                           <ul class="carousel-btn rounded-buttons mobile-stack">
+                              <li><a class="btn primary-btn rounded-full" href="#">Shop Now</a></li>
+                              <li><a class="btn primary-btn-outline rounded-full" href="#">View Categories</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item bg_cover"
+               style="background-image: url(assets/images/banner2.jpg);">
+               <div class="carousel-caption">
+                  <div class="container">
+                     <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-7 col-sm-10">
+                           <h2 class="carousel-title">Sterile & Reliable Instruments</h2>
+                           <p class="text">
+                              Maintain the highest hygiene standards with our range of sterilized and certified dental instruments.
+                           </p>
+                           <ul class="carousel-btn rounded-buttons mobile-stack">
+                              <li><a class="btn primary-btn rounded-full" href="#">Explore Instruments</a></li>
+                              <li><a class="btn primary-btn-outline rounded-full" href="#">Learn More</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item bg_cover"
+               style="background-image: url(assets/images/banner3.jpg);">
+               <div class="carousel-caption">
+                  <div class="container">
+                     <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-7 col-sm-10">
+                           <h2 class="carousel-title">Your Trusted Dental Supply Partner</h2>
+                           <p class="text">
+                              Fast delivery, premium products, and affordable pricing — everything your clinic needs in one place.
+                           </p>
+                           <ul class="carousel-btn rounded-buttons mobile-stack">
+                              <li><a class="btn primary-btn rounded-full" href="#">Order Now</a></li>
+                              <li><a class="btn primary-btn-outline rounded-full" href="#">Contact Us</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+
+         <a class="carousel-control-prev" href="#carouselOne" role="button" data-bs-slide="prev">
+            <i class="lni lni-chevron-left"></i>
+         </a>
+         <a class="carousel-control-next" href="#carouselOne" role="button" data-bs-slide="next">
+            <i class="lni lni-chevron-right"></i>
+         </a>
+      </div>
+   </div>
+</section>
+<!--====== SLIDER ONE PART ENDS ======-->
+
+
+<!-- ===================== CATEGORIES ===================== -->
+<!-- ===================== NEW ARRIVALS PRODUCTS (Catchy & Responsive) ===================== -->
+<section class="new-arrivals-section py-5 my-5">
+    <div class="container">
+        <!-- Header with Stronger Attention-Grabbin Text -->
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="display-5 fw-bolder mb-2" style="color: #64a6bd;">
+                    🚨 Hot Off The Press: <span class="d-block d-md-inline">New Arrivals!</span>
+                </h2>
+                <p class="lead text-muted mx-auto" style="max-width: 600px;">
+                    Be the first to explore the latest innovations in dental supplies and equipment.
+                </p>
+            </div>
+        </div>
+
+        <!-- Product Grid (2 columns on desktop, 1 column on mobile) -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- Product 1: Highlighted Item -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="card new-arrival-card featured-product shadow-lg border-0 h-100">
+                    <div class="row g-0">
+                        <div class="col-md-5 new-arrival-img-container">
+                            <!-- Image uses img-fluid and custom new-arrival-img class -->
+                            <img src="assets/images/new-p.jpg" class="img-fluid rounded-start new-arrival-img" alt="New Filling Material Kit">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-4">
+                                <span class="badge bg-primary mb-2">NEW</span>
+                                <h5 class="card-title fw-bold">Advanced Filling Material Kit</h5>
+                                <p class="card-text text-muted">A next-generation composite for superior aesthetics and durability. Limited stock available.</p>
+                                <p class="h4 fw-bolder text-dark">$149.99</p>
+                                <a href="product-details-new-a.html" class="btn btn-primary primary-btn rounded-full w-100 mt-2">View Details & Order</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: Second New Item -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="card new-arrival-card shadow-sm border-0 h-100">
+                    <div class="row g-0">
+                        <div class="col-md-5 new-arrival-img-container">
+                            <!-- Image uses img-fluid and custom new-arrival-img class -->
+                            <img src="assets/images/new-p2.jpg" class="img-fluid rounded-start new-arrival-img" alt="Ergonomic Handpiece">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-4">
+                                <span class="badge bg-success mb-2">HOT</span>
+                                <h5 class="card-title fw-bold">Ergonomic High-Speed Handpiece</h5>
+                                <p class="card-text text-muted">Ultra-lightweight design reduces fatigue for extended procedures.</p>
+                                <p class="h4 fw-bolder text-dark">$499.00</p>
+                                <a href="product-details-new-b.html" class="btn btn-outline-primary primary-btn-outline rounded-full w-100 mt-2">Check It Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Button to See All New Products -->
+        <div class="text-center mt-5">
+            <a href="products.html?filter=new-arrivals" class="btn btn-lg primary-btn-custom animate-pulse shadow-lg">
+                See All New Arrivals <i class="lni lni-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+</section> 
+
+<!-- ===================== FEATURED PRODUCTS ===================== -->
+<div class="container mt-5">
+    <h2 class="fw-bold text-center" style="color:#64a6bd;">Featured Products</h2>
+    <p class="text-center text-muted">Top sellers and new arrivals</p>
+
+    <div class="row mt-4 g-4">
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card featured-card">
+                <img src="assets/images/product1.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="fw-semibold">Dental Mirror</h5>
+                    <p class="text-muted">Instruments</p>
+                    <a href="product-details.html" class="btn btn-primary w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card featured-card">
+                <img src="assets/images/product2.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="fw-semibold">Surgical Gloves</h5>
+                    <p class="text-muted">Consumables</p>
+                    <a href="product-details.html" class="btn btn-primary w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card featured-card">
+                <img src="assets/images/product3.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="fw-semibold">Chair Light</h5>
+                    <p class="text-muted">Equipment</p>
+                    <a href="product-details.html" class="btn btn-primary w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card featured-card">
+                <img src="assets/images/product4.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="fw-semibold">Scaler Set</h5>
+                    <p class="text-muted">Instruments</p>
+                    <a href="product-details.html" class="btn btn-primary w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5 mb-5">
+        <a href="products.html" class="btn btn-lg btn-outline-secondary px-5">See More Products</a>
+    </div>
+    </div>
+
+
+
+
+<!--====== Tiny Slider Css ======-->
+
+<!--====== TESTIMONIAL ONE PART START ======-->
+
+  <section class="testimonial-one">
+    <!--======  Start Section Title Seven ======-->
+    <div class="section-title-seven">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title align-center">
+              <span> Testimonial </span>
+              <h2 class="fw-bold">What People Says</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- container -->
+    </div>
+    <!--====== End Section Title Seven ======-->
+    <div class="container">
+      <div class="testimonial-one-wrapper">
+        <div class="row justify-content-center">
+          <div class="col-md-9 col-lg-12">
+            <div class="row testimonial-one-active">
+              <div class="col-lg-4">
+                <div class="single-testimonial text-center">
+                  <div class="testimonial-image">
+                    <img src="https://cdn.ayroui.com/1.0/images/testimonial/author-1.jpg" alt="Author" />
+                    <div class="quote-icon">
+                      <i class="lni lni-quotation"></i>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="text">
+                      Stop wasting time and money designing and managing a
+                      website that doesn’t get results. Happiness lorem guaranteed!
+                    </p>
+                    <h6 class="author-name">Isabela Moreira</h6>
+                    <span class="sub-title">CEO, GrayGrids</span>
+                  </div>
+                </div>
+                <!-- single testimonial -->
+              </div>
+              <div class="col-lg-4">
+                <div class="single-testimonial text-center">
+                  <div class="testimonial-image">
+                    <img src="https://cdn.ayroui.com/1.0/images/testimonial/author-2.jpg" alt="Author" />
+                    <div class="quote-icon">
+                      <i class="lni lni-quotation"></i>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="text">
+                      Stop wasting time and money designing and managing a
+                      website that doesn’t get results. Happiness lorem guaranteed!
+                    </p>
+                    <h6 class="author-name">Fajar Siddiq</h6>
+                    <span class="sub-title">Founder, MakerFlix</span>
+                  </div>
+                </div>
+                <!-- single testimonial -->
+              </div>
+              <div class="col-lg-4">
+                <div class="single-testimonial text-center">
+                  <div class="testimonial-image">
+                    <img src="https://cdn.ayroui.com/1.0/images/testimonial/author-3.jpg" alt="Author" />
+                    <div class="quote-icon">
+                      <i class="lni lni-quotation"></i>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="text">
+                      Stop wasting time and money designing and managing a
+                      website that doesn’t get results. Happiness lorem guaranteed!
+                    </p>
+                    <h6 class="author-name">Fiona</h6>
+                    <span class="sub-title">Lead Designer, UIdeck</span>
+                  </div>
+                </div>
+                <!-- single testimonial -->
+              </div>
+              <div class="col-lg-4">
+                <div class="single-testimonial text-center">
+                  <div class="testimonial-image">
+                    <img src="https://cdn.ayroui.com/1.0/images/testimonial/author-4.jpg" alt="Author" />
+                    <div class="quote-icon">
+                      <i class="lni lni-quotation"></i>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="text">
+                      Stop wasting time and money designing and managing a
+                      website that doesn’t get results. Happiness lorem guaranteed!
+                    </p>
+                    <h6 class="author-name">Elon Musk</h6>
+                    <span class="sub-title">CEO, SpaceX</span>
+                  </div>
+                </div>
+                <!-- single testimonial -->
+              </div>
+            </div>
+            <!-- row -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- container -->
+  </section>
+
+  <!--====== TESTIMONIAL ONE PART ENDS ======-->
+
+  <!--====== Tiny Slider js ======-->
+  <script src="https://cdn.ayroui.com/1.0/js/tiny-slider.js"></script></script>
+
+  <script>
+    //======== tiny slider for testimonial-one
+    tns({
+      autoplay: true,
+      autoplayButtonOutput: false,
+      mouseDrag: true,
+      gutter: 0,
+      container: ".testimonial-one-active",
+      center: true,
+      nav: true,
+      controls: false,
+      speed: 400,
+      controlsText: [
+        '<i class="lni lni-arrow-left-circle"></i>',
+        '<i class="lni lni-arrow-right-circle"></i>',
+      ],
+      responsive: {
+        0: {
+          items: 1,
+        },
+
+        992: {
+          items: 2,
+        },
+        1200: {
+          items: 3,
+        },
+      },
+    });
+  </script>
+
+
+
+<!-- ===================== CTA BANNER ===================== -->
+<div class="container mt-5">
+    <div class="cta-banner">
+        <h2 class="fw-bold">Premium Dental Supplies Delivered Fast</h2>
+        <p class="mt-2">Trusted by clinics across Pakistan for quality and reliability.</p>
+        <a href="products.html" class="btn btn-light px-4 mt-3">Browse Products</a>
+    </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<!-- dynamic footer -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<footer class="modern-footer pt-5 mt-5">
+    <div class="container footer-content">
+        <div class="row g-4 mb-5">
+
+            <!-- Company Info -->
+            <div class="col-lg-4 col-md-6">
+                <a href="#" class="footer-logo d-block mb-4">
+                    Barakah Dental Supplies<span class="text-primary"></span>
+                </a>
+
+                <p class="text-muted mb-4">
+                    Your trusted partner for premium dental instruments, equipment, and supplies across Pakistan.
+                </p>
+
+                <ul class="contact-info mb-4">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Karachi, Pakistan<br>Korangi Industrial Area</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+92 300 0000000</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>support@barakahdental.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-4 col-md-6">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="blog.html">News & Articles</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h3 class="footer-title">Stay Updated</h3>
+                <p class="text-muted mb-4">
+                    Subscribe for updates on new dental products, discounts, and industry news.
+                </p>
+
+                <form class="mb-4">
+                    <div class="mb-3">
+                        <input type="email" class="form-control newsletter-input" placeholder="Your email address">
+                    </div>
+                    <button type="submit" class="btn btn-subscribe text-white w-100">Subscribe Now</button>
+                </form>
+
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row py-4">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; <span id="year"></span> Barakah Dental Supplies. All rights reserved.</p>
+                </div>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <p>Made with <i class="fas fa-heart text-danger"></i> by Barakah Dental</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/site.js"></script>   
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    // auto-select all major sections & elements
+    document.querySelectorAll(
+        "section, .container, .category-card, .featured-card, .single-testimonial, footer"
+    ).forEach(el => {
+        el.classList.add("hidden");
+        observer.observe(el);
+    });
+});
+</script>
+
+</body>
+</html>
