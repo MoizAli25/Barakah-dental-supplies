@@ -1029,25 +1029,32 @@ body {
     border: none !important;
     z-index: 1001;
   }
-  .navbar-toggler-icon {
-    background-image: none !important;
-    width: 28px;
-    height: 2px;
-    background-color: white;
-    position: relative;
-  }
-  .navbar-toggler-icon::before,
-  .navbar-toggler-icon::after {
-    content: "";
-    position: absolute;
-    width: 28px;
-    height: 2px;
-    background: white;
-    left: 0;
-    transition: 0.3s;
-  }
-  .navbar-toggler-icon::before { top: -8px; }
-  .navbar-toggler-icon::after { top: 8px; }
+ /* MOBILE TOGGLER — Clean Plus Icon (No before/after) */
+.custom-toggler {
+  border: none !important;
+  outline: none !important;
+  padding: 8px;
+  background: transparent;
+}
+
+.toggler-icon {
+  font-size: 28px;
+  line-height: 1;
+  color: white;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* When menu opens, + rotates into X */
+.navbar-toggler.collapsed .toggler-icon {
+  transform: rotate(0deg);
+}
+
+.navbar-toggler:not(.collapsed) .toggler-icon {
+  transform: rotate(45deg);
+}
+
 
   /* Full-screen mobile menu */
   .navbar-collapse {
@@ -1393,3 +1400,21 @@ body {
         border-radius: 0.25rem 0.25rem 0 0 !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
