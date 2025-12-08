@@ -179,6 +179,179 @@ body {
     font-weight: 600;
 }
 
+/* =======================================
+   MOBILE RESPONSIVE OPTIMIZATION
+   ======================================= */
+@media (max-width: 576px) {
+
+    /* 2 cards per row */
+    #product-list > div {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding: 0.5rem !important;
+    }
+
+    /* Product Card Improvements */
+    .product-card {
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        padding-bottom: 10px;
+    }
+
+    /* Reduce image height for better fit */
+    .product-card img {
+        height: 150px !important;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+
+    /* Text scaling */
+    .product-title {
+        font-size: 0.95rem !important;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-top: 6px;
+    }
+
+    .product-category {
+        font-size: 0.8rem !important;
+        line-height: 1;
+    }
+
+    /* Button size optimization */
+    .product-card .btn {
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* Better spacing in small cards */
+    .product-card .p-3,
+    .product-card .card-body {
+        padding: 8px !important;
+    }
+
+    /* Filter Sidebar - collapse full width */
+    .sticky-filter {
+        position: static !important;
+    }
+
+    /* Product Detail Page optimization */
+    .product-main-img {
+        height: 280px !important;
+        border-radius: 12px;
+    }
+
+    .thumbnail-img {
+        height: 70px !important;
+        border-radius: 6px;
+    }
+
+    /* Reduce padding on general containers */
+    .container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    /* Pagination spacing */
+    .pagination .page-link {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ===========================
+   EQUAL HEIGHT PRODUCT CARDS
+   =========================== */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card .card-body,
+.product-card .p-3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fix title height (2 lines max) */
+.product-title {
+    min-height: 42px;
+    max-height: 42px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Push button to the bottom */
+.product-card .btn {
+    margin-top: auto;
+}
+/* ===========================
+   MOBILE RESPONSIVE GRID FIX
+   =========================== */
+@media (max-width: 576px) {
+    #product-list > div {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding: 0.5rem !important;
+    }
+
+    /* Adjust mobile image height */
+    .product-card img {
+        height: 150px !important;
+    }
+
+    .product-title {
+        font-size: 0.9rem !important;
+        min-height: 38px;
+        max-height: 38px;
+    }
+
+    .product-card .btn {
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.category-card {
+  cursor: pointer;
+  border: 2px solid #64a6bd20; 
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  border-color: #64a6bd;
+  box-shadow: 0px 8px 18px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -1400,6 +1573,222 @@ body {
         border-radius: 0.25rem 0.25rem 0 0 !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Floating WhatsApp button */
+#whatsapp-chat-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform .3s;
+}
+#whatsapp-chat-button:hover {
+  transform: scale(1.1);
+}
+#whatsapp-chat-button img {
+  width: 35px;
+}
+
+/* Popup */
+#whatsapp-popup {
+  width: 320px;
+  background: #fff;
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  border-radius: 15px;
+  display: none;
+  z-index: 9999;
+}
+
+/* Header */
+.popup-header {
+  background: #25d366;
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.whatsapp-logo {
+  width: 30px;
+}
+
+/* Message bubble */
+.bot-message {
+  background: #f1f0f0;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  max-width: 90%;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  #whatsapp-popup {
+    width: 90%;
+    right: 5%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ========== Categories Slider ========== */
+
+/* Wrapper: keep some horizontal space for arrows, center content */
+.category-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 0 48px; /* safe space for arrows */
+}
+
+/* Slider track */
+.category-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px 8px; /* vertical padding so cards are vertically centered */
+  align-items: center; /* vertically center cards */
+  margin: 0 auto;
+}
+
+/* Hide scrollbar visually (still scrollable) */
+.category-slider::-webkit-scrollbar { height: 8px; }
+.category-slider::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.06); border-radius: 8px; }
+
+/* Card */
+.category-slide-card {
+  flex: 0 0 auto; /* prevent cards from growing or shrinking */
+  width: 260px; /* fixed visual width on desktop */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  background: #fff;
+  text-align: center;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-decoration: none;
+  color: #1f2937;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* Image: contain inside fixed box so it doesn't stretch card height */
+.category-slide-card img {
+  width: 120px; /* control visual image width */
+  height: 120px; /* fixed box ensures consistent card height */
+  object-fit: contain; /* preserve image aspect ratio */
+  display: block;
+  margin: 6px auto 0 auto;
+}
+
+/* Title */
+.category-slide-card h5 {
+  margin: 6px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #243243;
+}
+
+/* Hover effect */
+.category-slide-card:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12); 
+}
+
+/* Arrow buttons */
+.cat-slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #64a6bd;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+.left-btn { left: 8px; }
+.right-btn { right: 8px; }
+
+/* Responsive adjustments */
+
+/* Medium screens */
+@media (max-width: 992px) {
+  .category-slide-card { width: 220px; }
+  .category-slide-card img { width: 100px; height: 100px; }
+}
+
+/* Tablet screens */
+@media (max-width: 768px) {
+  .category-slider-wrapper { padding: 0 24px; }
+  .category-slide-card { width: 70%; max-width: 420px; }
+  .category-slide-card img { width: 110px; height: 110px; }
+}
+
+/* Small/mobile screens */
+@media (max-width: 480px) {
+  .category-slider { padding: 16px 6px; gap: 14px; }
+  .category-slide-card { width: 92%; border-radius: 10px; padding: 14px; }
+  .category-slide-card img { width: 110px; height: 110px; }
+
+  /* Arrow buttons for mobile */
+  .cat-slide-btn {
+    padding: 6px;       /* smaller button */
+    font-size: 14px;    /* smaller icon */
+  }
+  .left-btn { left: 4px; }
+  .right-btn { right: 4px; }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

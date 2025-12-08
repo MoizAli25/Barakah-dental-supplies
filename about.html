@@ -362,6 +362,46 @@
       </div>
     </footer>
 
+<!-- WhatsApp Floating Button -->
+<div id="whatsapp-chat-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" />
+</div>
+
+<!-- WhatsApp Popup -->
+<div id="whatsapp-popup" class="shadow">
+  <div class="popup-header d-flex align-items-center p-2">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="whatsapp-logo me-2">
+    <strong>Chat with us</strong>
+    <button class="btn-close ms-auto" id="closePopup"></button>
+  </div>
+
+  <div class="popup-body p-3">
+    <div class="bot-message mb-3">
+      👋 <strong>Hello!</strong><br>
+      How can I help you today?
+    </div>
+
+    <a href="https://wa.me/923310006132?text=Hello%20I%20need%20help" 
+       target="_blank" 
+       class="btn btn-success w-100">
+       Start WhatsApp Chat
+    </a>
+  </div>
+</div>
+
+<script>
+  const chatBtn = document.getElementById("whatsapp-chat-button");
+  const chatPopup = document.getElementById("whatsapp-popup");
+  const closePopup = document.getElementById("closePopup");
+
+  chatBtn.onclick = () => {
+    chatPopup.style.display = "block";
+  };
+
+  closePopup.onclick = () => {
+    chatPopup.style.display = "none";
+  };
+</script> 
 
 
 

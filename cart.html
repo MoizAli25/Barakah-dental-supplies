@@ -253,6 +253,53 @@
     </div>
 </footer>
 
+
+
+<!-- WhatsApp Floating Button -->
+<div id="whatsapp-chat-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" />
+</div>
+
+<!-- WhatsApp Popup -->
+<div id="whatsapp-popup" class="shadow">
+  <div class="popup-header d-flex align-items-center p-2">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="whatsapp-logo me-2">
+    <strong>Chat with us</strong>
+    <button class="btn-close ms-auto" id="closePopup"></button>
+  </div>
+
+  <div class="popup-body p-3">
+    <div class="bot-message mb-3">
+      👋 <strong>Hello!</strong><br>
+      How can I help you today?
+    </div>
+
+    <a href="https://wa.me/923310006132?text=Hello%20I%20need%20help" 
+       target="_blank" 
+       class="btn btn-success w-100">
+       Start WhatsApp Chat
+    </a>
+  </div>
+</div>
+
+<script>
+  const chatBtn = document.getElementById("whatsapp-chat-button");
+  const chatPopup = document.getElementById("whatsapp-popup");
+  const closePopup = document.getElementById("closePopup");
+
+  chatBtn.onclick = () => {
+    chatPopup.style.display = "block";
+  };
+
+  closePopup.onclick = () => {
+    chatPopup.style.display = "none";
+  };
+</script> 
+
+
+
+
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const observer = new IntersectionObserver((entries) => {
@@ -272,6 +319,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
+
+<script>
+function loadCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartItems = document.getElementById("cart-items");
+    cartItems.innerHTML = "";
+    let subtotal = 0;
+
+    cart.forEach((item, index) => {
+        let itemTotal = item.qty * item.price;
+        subtotal += itemTotal;
+
+        cartItems.innerHTML += `
+            <tr>
+                <td><img src="${item.image}" width="50"></td>
+                <td>${item.title}</td>
+                <td>$${item.price}</td>
+                <td>
+                    <input type="number" class="form-control qty-box" value="${item.qty}" min="1" onchange="updateQty(${index}, this.value)">
+                </td>
+                <td>$${itemTotal.toFixed(2)}</td>
+                <td><button class="btn btn-danger btn-sm" onclick="removeItem(${index})">X</button></td>
+            </tr>
+        `;
+    });
+
+    let tax = subtotal * 0.05;
+    let total = subtotal + tax;
+
+    document.getElementById("subtotal").innerText = "$" + subtotal.toFixed(2);
+    document.getElementById("tax").innerText = "$" + tax.toFixed(2);
+    document.getElementById("total").innerText = "$" + total.toFixed(2);
+}
+
+function updateQty(index, qty) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart[index].qty = parseInt(qty);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+}
+
+function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+}
+
+window.onload = loadCart;
+</script>
+
+
+
 
 </body>
 
