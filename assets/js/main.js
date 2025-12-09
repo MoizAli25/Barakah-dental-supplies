@@ -218,3 +218,29 @@ loadCart();
 
 
 
+
+const session = JSON.parse(localStorage.getItem("session"));
+
+const loginBtn = document.getElementById("loginBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+const profileNav = document.getElementById("profileNav");
+
+// When logged in
+if (session) {
+  loginBtn?.classList.add("d-none");
+  logoutBtn?.classList.remove("d-none");
+  profileNav?.classList.remove("d-none");
+}
+
+// When logged out
+if (!session) {
+  loginBtn?.classList.remove("d-none");
+  logoutBtn?.classList.add("d-none");
+  profileNav?.classList.add("d-none");
+}
+
+logoutBtn?.addEventListener("click", () => {
+  localStorage.removeItem("session");
+  window.location.href = "login.html";
+});
+

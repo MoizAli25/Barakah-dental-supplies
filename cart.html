@@ -72,6 +72,7 @@
           <li class="nav-item"><a class="nav-link nav-anim" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link nav-anim" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link nav-anim" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link nav-anim" href="profile.html">Profile</a></li>
 
           <li class="nav-item ms-2">
             <a class="btn btn-light login-btn" href="login.html">Login</a>
@@ -119,36 +120,52 @@
             </div>
 
             <!-- Order Summary -->
-            <div class="col-lg-4">
-                <div class="order-summary shadow-sm">
-                    <h5>Order Summary</h5>
-                    <hr>
+          <!-- Order Summary -->
+<div class="col-lg-4">
+    <div class="order-summary shadow-sm">
+        <h5>Order Summary</h5>
+        <hr>
 
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Subtotal</span>
-                        <span id="subtotal">PKR 0</span>
-                    </div>
+        <div class="d-flex justify-content-between mb-2">
+            <span>Subtotal</span>
+            <span id="subtotal">PKR 0</span>
+        </div>
 
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Taxes (5%)</span>
-                        <span id="tax">PKR 0</span>
-                    </div>
+        <div class="d-flex justify-content-between mb-2">
+            <span>Taxes (5%)</span>
+            <span id="tax">PKR 0</span>
+        </div>
 
-                    <hr>
+        <hr>
 
-                    <div class="d-flex justify-content-between fs-5 fw-bold">
-                        <span>Total</span>
-                        <span id="total">PKR 0</span>
-                    </div>
+        <div class="d-flex justify-content-between fs-5 fw-bold">
+            <span>Total</span>
+            <span id="total">PKR 0</span>
+        </div>
 
-                    <button id="checkout-btn" class="btn btn-primary w-100 mt-4 fw-bold" ><a href="checkout.html" style="color: #e4e4e4;"> 
-                        Proceed to Checkout
+        <button id="checkout-btn" class="btn btn-primary w-100 mt-4 fw-bold">
+            Proceed to Checkout
+        </button>
+    </div>
+</div>
 
-                    </a>
-                       
-                    </button>
-                </div>
-            </div>
+<script>
+    // Proceed to Checkout Logic
+    const checkoutBtn = document.getElementById("checkout-btn");
+
+    checkoutBtn.addEventListener("click", () => {
+        const session = JSON.parse(localStorage.getItem("session"));
+
+        if (!session) {
+            // User not logged in → redirect to login page
+            window.location.href = "login.html";
+        } else {
+            // User logged in → redirect to checkout page
+            window.location.href = "checkout.html";
+        }
+    });
+</script>
+
         </div>
     </div>
 
