@@ -32,6 +32,10 @@ const products = [
   { id: 30, title: "ULTRADENT WHITENING KIT", category: "Equipment", price: 8500, quantity: 5, total: 42500, image: "assets/images/product6.jpg", description: "Ultradent kit for effective whitening treatments." }
 ];
 
+window.allProducts = products;
+
+let cart = []; // FIXED — cart should start empty
+
 let currentPage = 1;
 const itemsPerPage = 12;
 
@@ -57,14 +61,31 @@ function renderProducts() {
     paginated.forEach(p => {
         container.innerHTML += `
         <div class="col-md-4 col-sm-6 mb-4">
-            <div class="card product-card">
+            <div class="card product-card p-2">
+
                 <img src="${p.image}" class="card-img-top" alt="${p.title}">
+
                 <div class="card-body">
                     <h5 class="product-title">${p.title}</h5>
-                    <p class="product-category">${p.category}</p>
-                    <h6 class="fw-bold">$${p.price.toFixed(2)}</h6>
+                    <p class="product-category text-muted">${p.category}</p>
+                    <h6 class="fw-bold">PKR ${p.price}</h6>
+
+                    <!-- Quantity Selector -->
+                    <div class="d-flex align-items-center gap-2 my-2">
+                        <button class="btn btn-sm btn-outline-secondary qty-minus" data-id="${p.id}">−</button>
+                        <input type="text" class="form-control text-center qty-input" value="1" data-id="${p.id}" style="width:60px;">
+                        <button class="btn btn-sm btn-outline-secondary qty-plus" data-id="${p.id}">+</button>
+                    </div>
+
+                    <!-- Add to Cart Button (FIXED) -->
+                    <button class="btn btn-light w-100 add-to-cart d-flex align-items-center justify-content-center gap-2" data-id="${p.id}">
+                        <i class="bi bi-cart"></i> Add to Cart
+                    </button>
+
+                    <!-- View Details -->
                     <a href="product-details.html?id=${p.id}" class="btn btn-primary w-100 mt-2">View Details</a>
                 </div>
+
             </div>
         </div>`;
     });
@@ -99,21 +120,64 @@ function setPage(num) {
 document.getElementById("searchBox").addEventListener("keyup", renderProducts);
 document.getElementById("categoryFilter").addEventListener("change", renderProducts);
 
+// =======================
+// PRODUCT CARD QUANTITY BUTTONS
+// =======================
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("qty-plus")) {
+        let id = e.target.getAttribute("data-id");
+        let input = document.querySelector(`.qty-input[data-id="${id}"]`);
+        input.value = parseInt(input.value) + 1;
+    }
+
+    if (e.target.classList.contains("qty-minus")) {
+        let id = e.target.getAttribute("data-id");
+        let input = document.querySelector(`.qty-input[data-id="${id}"]`);
+        if (parseInt(input.value) > 1) input.value = parseInt(input.value) - 1;
+    }
+});
+
 renderProducts();
 
+// =======================
+// ADD TO CART FUNCTIONALITY (FIXED)
+// =======================
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("add-to-cart")) {
+        
+        let id = parseInt(e.target.getAttribute("data-id"));
+        let qty = parseInt(document.querySelector(`.qty-input[data-id="${id}"]`).value);
+
+        let product = products.find(p => p.id === id);
+
+        let check = cart.find(item => item.id === id);
+        if (check) {
+            check.qty += qty;
+        } else {
+            cart.push({
+                id: product.id,
+                name: product.title,
+                price: product.price,
+                qty: qty,
+                img: product.image
+            });
+        }
+
+        loadCart();
+        alert("Added to cart!");
+    }
+});
 
 // ===========================
 // PRODUCT DETAIL PAGE LOGIC
 // ===========================
-
-// Switch main image when thumbnail is clicked
 function switchImage(src) {
     document.getElementById("mainImage").src = src;
 }
 
-// Quantity selector
+// Detail page quantity
 let quantity = 1;
-const maxStock = 10; // Later will come from Laravel
+const maxStock = 10;
 
 document.getElementById("qtyPlus")?.addEventListener("click", () => {
     if (quantity < maxStock) {
@@ -129,31 +193,19 @@ document.getElementById("qtyMinus")?.addEventListener("click", () => {
     }
 });
 
-// Add to cart
+// Toast add to cart
 document.getElementById("addToCartBtn")?.addEventListener("click", () => {
     let toast = new bootstrap.Toast(document.getElementById("cartToast"));
     toast.show();
 });
-// Dummy cart products (replace with backend later)
-let cart = [
-    {
-        id: 1,
-        name: "Dental Mirror",
-        price: 500,
-        qty: 2,
-        img: "assets/images/mirror.jpg"
-    },
-    {
-        id: 2,
-        name: "Surgical Gloves",
-        price: 1200,
-        qty: 1,
-        img: "assets/images/gloves.jpg"
-    }
-];
 
+// ===========================
+// CART PAGE FUNCTIONS
+// ===========================
 function loadCart() {
     const tbody = document.getElementById('cart-items');
+    if (!tbody) return;
+
     tbody.innerHTML = "";
 
     cart.forEach(item => {
@@ -196,6 +248,8 @@ function removeItem(id) {
 }
 
 function updateTotals() {
+    if (!document.getElementById('subtotal')) return;
+
     const subtotal = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
     const tax = subtotal * 0.05;
     const total = subtotal + tax;
@@ -209,30 +263,21 @@ function updateTotals() {
 
 loadCart();
 
-
-
-
-
-
-
-
-
-
-
+// ===========================
+// LOGIN / LOGOUT LOGIC
+// ===========================
 const session = JSON.parse(localStorage.getItem("session"));
 
 const loginBtn = document.getElementById("loginBtn");
 const logoutBtn = document.getElementById("logoutBtn");
 const profileNav = document.getElementById("profileNav");
 
-// When logged in
 if (session) {
   loginBtn?.classList.add("d-none");
   logoutBtn?.classList.remove("d-none");
   profileNav?.classList.remove("d-none");
 }
 
-// When logged out
 if (!session) {
   loginBtn?.classList.remove("d-none");
   logoutBtn?.classList.add("d-none");
@@ -244,3 +289,182 @@ logoutBtn?.addEventListener("click", () => {
   window.location.href = "login.html";
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===================== CART SYSTEM =====================
+
+// Get cart from localStorage or initialize empty
+function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+// Save cart to localStorage
+function saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Update cart count in navbar
+function updateCartCount() {
+    const cart = getCart();
+    const count = cart.reduce((sum, item) => sum + item.qty, 0);
+    const badge = document.getElementById("cart-count");
+    if (badge) badge.innerText = count;
+}
+
+// Add item to cart (from product-details page)
+function addToCart(product) {
+    let cart = getCart();
+
+    // If item already exists → increase qty
+    const index = cart.findIndex(p => p.id === product.id);
+
+    if (index !== -1) {
+        cart[index].qty += product.qty;
+    } else {
+        cart.push(product);
+    }
+
+    saveCart(cart);
+    updateCartCount();
+}
+
+// ===================== PRODUCT-DETAILS PAGE LOGIC =====================
+document.addEventListener("DOMContentLoaded", () => {
+    const addBtn = document.getElementById("addToCartBtn");
+
+    if (addBtn) {
+        addBtn.addEventListener("click", () => {
+            const qty = parseInt(document.getElementById("quantityInput").value);
+
+            // Read product from HTML (already loaded by your script)
+            const product = {
+                id: selectedProduct.id,
+                title: selectedProduct.title,
+                price: selectedProduct.price,
+                image: selectedProduct.image,
+                qty: qty
+            };
+
+            addToCart(product);
+
+            // Show your Bootstrap toast popup
+            const toastElement = document.getElementById("cartToast");
+            if (toastElement) {
+                const toast = new bootstrap.Toast(toastElement);
+                toast.show();
+            }
+        });
+    }
+
+    updateCartCount();
+});
+
+// ===================== CART PAGE LOADING =====================
+function loadCart() {
+    const cart = getCart();
+    const container = document.getElementById("cart-items");
+    if (!container) return;
+
+    container.innerHTML = "";
+    let subtotal = 0;
+
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.qty;
+        subtotal += itemTotal;
+
+        container.innerHTML += `
+            <tr>
+                <td><img src="${item.image}" width="50"></td>
+                <td>${item.title}</td>
+                <td>PKR ${item.price}</td>
+                <td>
+                    <input type="number" class="form-control qty-box" value="${item.qty}" min="1"
+                        onchange="updateQty(${index}, this.value)">
+                </td>
+                <td>PKR ${itemTotal}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" onclick="removeItem(${index})">X</button>
+                </td>
+            </tr>
+        `;
+    });
+
+    const tax = subtotal * 0.05;
+    const total = subtotal + tax;
+
+    if (document.getElementById("subtotal")) document.getElementById("subtotal").innerText = `PKR ${subtotal}`;
+    if (document.getElementById("tax")) document.getElementById("tax").innerText = `PKR ${tax}`;
+    if (document.getElementById("total")) document.getElementById("total").innerText = `PKR ${total}`;
+
+    updateCartCount();
+}
+
+// ===================== UPDATE QTY =====================
+function updateQty(index, qty) {
+    let cart = getCart();
+    cart[index].qty = parseInt(qty);
+    saveCart(cart);
+    loadCart();
+}
+
+// ===================== REMOVE ITEM =====================
+function removeItem(index) {
+    let cart = getCart();
+    cart.splice(index, 1);
+    saveCart(cart);
+    loadCart();
+}
+
+// Auto-load cart when opening cart.html
+window.onload = function () {
+    loadCart();
+    updateCartCount();
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 🔥 Share products globally
+window.allProducts = products;
+
+// 🔥 Also expose addToCart for index.html
+window.addToCart = function(item){
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const existing = cart.find(i => i.id === item.id);
+    if(existing){
+        existing.qty += item.qty;
+    } else {
+        cart.push(item);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+};

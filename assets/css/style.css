@@ -13,7 +13,15 @@ body {
     border-radius: 12px;
     overflow: hidden;
     border: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    
+  box-shadow: 
+    rgba(0, 0, 0, 0.09) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+
     transition: 0.3s;
 }
 
@@ -116,7 +124,12 @@ body {
     padding: 25px;
     border-radius: 18px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+     box-shadow: 
+    rgba(0, 0, 0, 0.09) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
     transition: 0.3s;
 }
 
@@ -194,7 +207,12 @@ body {
     /* Product Card Improvements */
     .product-card {
         border-radius: 10px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+         box-shadow: 
+    rgba(0, 0, 0, 0.09) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
         padding-bottom: 10px;
     }
 
@@ -916,7 +934,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 10px;
-    background: white;
+    background: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1460,118 +1478,93 @@ body {
 
 
 /* Custom Variable based on your brand color: #64a6bd */
-:root {
-    --brand-primary: #64a6bd;
-    --brand-dark: #50859c; /* Darker shade for hover/active state */
-    --brand-success: #35b367; /* Keeping a distinct success color for one badge */
-}
 
-/* === NEW ARRIVALS SECTION STYLING === */
 
-/* Ensure the cards are visually distinct */
+
+
+/* Section background */
 .new-arrivals-section {
-    background-color: #f7f9fc; /* Light background to make the section pop */
+  background-color: #f7f9fc;
 }
 
-/* Base card styling */
+/* Card animation */
 .new-arrival-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new-arrival-card:hover {
-    transform: translateY(-5px); /* Subtle lift on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
-.new-arrival-card .card-body {
-    padding: 1.5rem;
-}
-
-/* Product Image in the card */
+/* Image */
 .new-arrival-img-container {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .new-arrival-img {
-    height: 100%;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
-/* Updated Badge Colors */
-.card-body .badge.bg-primary {
-    background-color: var(--brand-primary) !important;
-}
-.card-body .badge.bg-success {
-    background-color: var(--brand-success) !important;
-}
-
-/* Custom Primary Button for Attention (All New Arrivals Button) */
+/* Buttons */
 .primary-btn-custom {
-    background: var(--brand-primary);
-    border-color: var(--brand-primary);
-    color: var(--white);
-    padding: 12px 30px;
-    font-size: 1.15rem;
-    font-weight: 600;
+  background: #64a6bd;
+  border-color: #64a6bd;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .primary-btn-custom:hover {
-    background: var(--brand-dark); /* Darker shade on hover */
-    border-color: var(--brand-dark);
-    color: var(--white);
+  background: #4b8ca1;
+  border-color: #4b8ca1;
 }
 
-/* Updated Product Card Button Colors */
-.new-arrival-card .btn-primary {
-    background-color: var(--brand-primary);
-    border-color: var(--brand-primary);
-}
-.new-arrival-card .btn-primary:hover {
-    background-color: var(--brand-dark);
-    border-color: var(--brand-dark);
-}
-.new-arrival-card .btn-outline-primary {
-    color: var(--brand-primary);
-    border-color: var(--brand-primary);
-}
-.new-arrival-card .btn-outline-primary:hover {
-    background-color: var(--brand-primary);
-    color: var(--white);
-}
-
-
-/* Catchy 'Animate Pulse' for the main button */
+/* Pulse animation */
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .animate-pulse:hover {
-    animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
 }
 
-
-/* --- Mobile UI Overrides (for screens < 768px) --- */
+/* ---------------- MOBILE OPTIMIZATION ---------------- */
 @media (max-width: 767px) {
-    .new-arrivals-section .display-5 {
-        font-size: 1.8rem !important; /* Smaller, readable title */
-    }
 
-    /* Stack the content of the card vertically on small screens */
-    .new-arrival-card .row {
-        flex-direction: column;
-    }
+  .new-arrival-card .row {
+    flex-direction: column;
+  }
 
-    .new-arrival-card .col-md-5,
-    .new-arrival-card .col-md-7 {
-        width: 100%; /* Full width for stacking */
-    }
-    
-    .new-arrival-card .new-arrival-img {
-        height: 200px; /* fixed height for images on mobile */
-        border-radius: 0.25rem 0.25rem 0 0 !important;
-    }
+  .new-arrival-img {
+    height: 140px;
+  }
+
+  .new-arrival-card .card-body {
+    padding: 1rem;
+  }
+
+  .new-arrival-card .card-title {
+    font-size: 0.95rem;
+  }
+
+  .new-arrival-card .card-text {
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .new-arrival-card .btn {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
 }
 
 
@@ -1699,7 +1692,7 @@ body {
   text-align: center;
   padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;  
   text-decoration: none;
   color: #1f2937;
   transition: transform .18s ease, box-shadow .18s ease;
@@ -1805,5 +1798,45 @@ body {
 
 
 
+.banner-wrapper {
+  width: 100%;
+  height: 48px;
+  overflow: hidden;
+  background: #64a6bd;;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 
+  
+}
 
+.banner-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  padding-left: 100%;
+  animation: scrollBanner 20s linear infinite;
+}
+
+.banner-text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.banner-logo img {
+  height: 40px;       /* key fix */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

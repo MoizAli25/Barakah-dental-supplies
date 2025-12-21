@@ -234,84 +234,99 @@ document.addEventListener('DOMContentLoaded', function () {
 <!--====== SLIDER ONE PART ENDS ======-->
 
 
+
+
+
+
 <!-- ===================== CATEGORIES ===================== -->
 <!-- ===================== NEW ARRIVALS PRODUCTS (Catchy & Responsive) ===================== -->
 <section class="new-arrivals-section py-5 my-5">
-    <div class="container">
-        <!-- Header with Stronger Attention-Grabbin Text -->
-        <div class="row text-center mb-5">
-            <div class="col-12">
-                <h2 class="display-5 fw-bolder mb-2" style="color: #64a6bd;">
-                    Hot Off The Press: <span class="d-block d-md-inline">New Arrivals!</span>
-                </h2>
-                <p class="lead text-muted mx-auto" style="max-width: 600px;">
-                    Be the first to explore the latest innovations in dental supplies and equipment.
+  <div class="container">
+
+    <!-- Header -->
+    <div class="row text-center mb-5">
+      <div class="col-12">
+        <h2 class="display-5 fw-bolder mb-2" style="color:#64a6bd;">
+          Hot Off The Press:
+          <span class="d-block d-md-inline">New Arrivals!</span>
+        </h2>
+        <p class="lead text-muted mx-auto" style="max-width:600px;">
+          Be the first to explore the latest innovations in dental supplies and equipment.
+        </p>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="row g-3 justify-content-center">
+
+      <!-- Product 1 -->
+      <div class="col-lg-6 col-md-6 col-6">
+        <div class="card new-arrival-card h-100 border-0 shadow-sm">
+          <div class="row g-0">
+            <div class="col-md-5 new-arrival-img-container">
+              <img src="assets/images/new-p.jpg"
+                   class="img-fluid new-arrival-img"
+                   alt="Advanced Filling Material Kit">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <span class="badge bg-primary mb-2">NEW</span>
+                <h5 class="card-title fw-bold">Advanced Filling Kit</h5>
+                <p class="card-text text-muted">
+                  Superior aesthetics and durability. Limited stock.
                 </p>
+                <p class="h5 fw-bolder">$149.99</p>
+                <a href="#" class="btn btn-primary w-100 mt-2">
+                  View Details
+                </a>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <!-- Product Grid (2 columns on desktop, 1 column on mobile) -->
-        <div class="row g-4 justify-content-center">
-
-            <!-- Product 1: Highlighted Item -->
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="card new-arrival-card featured-product shadow-lg border-0 h-100">
-                    <div class="row g-0">
-                        <div class="col-md-5 new-arrival-img-container">
-                            <!-- Image uses img-fluid and custom new-arrival-img class -->
-                            <img src="assets/images/new-p.jpg" class="img-fluid rounded-start new-arrival-img" alt="New Filling Material Kit">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body p-4">
-                                <span class="badge bg-primary mb-2">NEW</span>
-                                <h5 class="card-title fw-bold">Advanced Filling Material Kit</h5>
-                                <p class="card-text text-muted">A next-generation composite for superior aesthetics and durability. Limited stock available.</p>
-                                <p class="h4 fw-bolder text-dark">$149.99</p>
-                                <a href="product-details-new-a.html" class="btn btn-primary primary-btn rounded-full w-100 mt-2">View Details & Order</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Product 2 -->
+      <div class="col-lg-6 col-md-6 col-6">
+        <div class="card new-arrival-card h-100 border-0 shadow-sm">
+          <div class="row g-0">
+            <div class="col-md-5 new-arrival-img-container">
+              <img src="assets/images/new-p2.jpg"
+                   class="img-fluid new-arrival-img"
+                   alt="Ergonomic Handpiece">
             </div>
-
-            <!-- Product 2: Second New Item -->
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="card new-arrival-card shadow-sm border-0 h-100">
-                    <div class="row g-0">
-                        <div class="col-md-5 new-arrival-img-container">
-                            <!-- Image uses img-fluid and custom new-arrival-img class -->
-                            <img src="assets/images/new-p2.jpg" class="img-fluid rounded-start new-arrival-img" alt="Ergonomic Handpiece">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body p-4">
-                                <span class="badge bg-success mb-2">HOT</span>
-                                <h5 class="card-title fw-bold">Ergonomic High-Speed Handpiece</h5>
-                                <p class="card-text text-muted">Ultra-lightweight design reduces fatigue for extended procedures.</p>
-                                <p class="h4 fw-bolder text-dark">$499.00</p>
-                                <a href="product-details-new-b.html" class="btn btn-outline-primary primary-btn-outline rounded-full w-100 mt-2">Check It Out</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <span class="badge bg-success mb-2">HOT</span>
+                <h5 class="card-title fw-bold">High-Speed Handpiece</h5>
+                <p class="card-text text-muted">
+                  Ultra-lightweight design reduces fatigue.
+                </p>
+                <p class="h5 fw-bolder">$499.00</p>
+                <a href="#" class="btn btn-outline-primary w-100 mt-2">
+                  Check It Out
+                </a>
+              </div>
             </div>
-
+          </div>
         </div>
-
-        <!-- Button to See All New Products -->
-        <div class="text-center mt-5">
-            <a href="products.html?filter=new-arrivals" class="btn btn-lg primary-btn-custom animate-pulse shadow-lg">
-                See All New Arrivals <i class="lni lni-arrow-right"></i>
-            </a>
-        </div>
+      </div>
 
     </div>
-</section> 
 
+    <!-- CTA -->
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-lg primary-btn-custom animate-pulse shadow">
+        See All New Arrivals →
+      </a>
+    </div>
+
+  </div>
+</section>
 
 
 
 <!-- ===================== CATEGORIES SLIDER SECTION ===================== -->
-<section class="categories-section py-5">
+<section class="categories-section py-5" style="background-color: #ffffffde;">
   <div class="container position-relative">
       <h2 class="fw-bold text-center mb-4" style="color:#64a6bd;">Shop by Categories</h2>
       <p class="text-center text-muted mb-5">Choose a category to quickly explore related dental products.</p>
@@ -352,6 +367,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+<div class="banner-wrapper">
+  <div class="banner-track">
+    <span class="banner-text">Barakah Dental Supplies</span>
+
+    <span class="banner-logo">
+      <img src="assets/images/LOGO.png" alt="Barakah Dental Supplies Logo">
+    </span>
+
+    <!-- duplicate for smooth loop -->
+    <span class="banner-text">Barakah Dental Supplies</span>
+    <span class="banner-logo">
+      <img src="assets/images/LOGO.png" alt="">
+    </span>
+       <span class="banner-text">Barakah Dental Supplies</span>
+
+    <span class="banner-logo">
+      <img src="assets/images/LOGO.png" alt="Barakah Dental Supplies Logo">
+    </span>
+
+    <!-- duplicate for smooth loop -->
+    <span class="banner-text">Barakah Dental Supplies</span>
+    <span class="banner-logo">
+      <img src="assets/images/LOGO.png" alt="">
+    </span>   <span class="banner-text">Barakah Dental Supplies</span>
+
+    <span class="banner-logo">
+      <img src="assets/images/LOGO.png" alt="Barakah Dental Supplies Logo">
+    </span>
+
+    <!-- duplicate for smooth loop -->
+    <span class="banner-text">Barakah Dental Supplies</span>
+    <span class="banner-logo">
+      <img src="assets/images/LOGO.png" alt="">
+    </span>   <span class="banner-text">Barakah Dental Supplies</span>
+
+    <span class="banner-logo">
+      <img src="assets/images/LOGO.png" alt="Barakah Dental Supplies Logo">
+    </span>
+
+    <!-- duplicate for smooth loop -->
+    <span class="banner-text">Barakah Dental Supplies</span>
+    <span class="banner-logo">
+      <img src="assets/images/LOGO.png" alt="">
+    </span>   <span class="banner-text">Barakah Dental Supplies</span>
+
+    <span class="banner-logo">
+      <img src="assets/images/LOGO.png" alt="Barakah Dental Supplies Logo">
+    </span>
+
+    <!-- duplicate for smooth loop -->
+    <span class="banner-text">Barakah Dental Supplies</span>
+    <span class="banner-logo">
+      <img src="assets/images/LOGO.png" alt="">
+    </span>
+  </div>
+</div>
+
 
 
 
@@ -361,15 +433,14 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 class="fw-bold text-center" style="color:#64a6bd;">Featured Products</h2>
     <p class="text-center text-muted">Top sellers and new arrivals</p>
 
-    <div class="row mt-4 g-4" id="featured-products-row">
-        <!-- Featured products will be injected here via JS -->
-    </div>
+  <div class="row mt-4 g-4" id="featured-products-row"></div>
+
 
     <div class="text-center mt-5 mb-5">
         <a href="products.html" class="btn btn-lg btn-outline-secondary px-5">See More Products</a>
     </div>
 </div>
-
+<!-- 
 <script>
     // Dynamically render featured products
     const products = [
@@ -405,8 +476,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    document.addEventListener("DOMContentLoaded", renderFeaturedProducts);
-</script>
+    documet.addEventListener("DOMContentLoaded", renderFeaturedProducts);
+</script> -->
 
 
 
@@ -416,14 +487,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <!--====== TESTIMONIAL ONE PART START ======-->
 
-  <section class="testimonial-one">
+  <section class="testimonial-one" style="background: linear-gradient(90deg, #64a6bd, #90d0e6, #64a6bd);">
     <!--======  Start Section Title Seven ======-->
     <div class="section-title-seven">
       <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="section-title align-center">
-              <span> Testimonial </span>
+              <span style="font-size: x-large; color: #ffffff;"> Testimonial </span>
               <h2 class="fw-bold">What People Says</h2>
               <p>
                 There are many variations of passages of Lorem Ipsum available,
@@ -434,7 +505,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <!-- container -->
-    </div>
+    </div>n
     <!--====== End Section Title Seven ======-->
     <div class="container">
       <div class="testimonial-one-wrapper">
@@ -594,15 +665,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 <ul class="contact-info mb-4">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Karachi, Pakistan<br>Korangi Industrial Area</span>
+                        <span>Karachi, Pakistan<br>Suite # A-33,Street # 3,Block 13-C ,Gulshan e Iqbal</span>
                     </li>
                     <li>
                         <i class="fas fa-phone"></i>
-                        <span>+92 300 0000000</span>
+                        <span>+92 331 0006132</span>
                     </li>
                     <li>
                         <i class="fas fa-envelope"></i>
-                        <span>support@barakahdental.com</span>
+                        <span>barakahdentalsupplies@gmail.com</span>
                     </li>
                 </ul>
             </div>
@@ -615,10 +686,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="blog.html">News & Articles</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#">Customer Support</a></li>
-                    <li><a href="#">Shipping Policy</a></li>
-                    <li><a href="#">Refund Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Customer Support</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
 
@@ -637,11 +706,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 </form>
 
                 <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/share/14RuZXoFBE5/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <!-- <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> -->
+                    <a href="https://www.instagram.com/barakahdental?utm_source=qr&igsh=MWx0ZjA5YjJlZHdsaQ==" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a> -->
+                    <a href="https://www.tiktok.com/@barakah.dental.su?_r=1&_t=ZS-92Jt6IV0lNM" class="social-icon"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
 
@@ -719,6 +788,82 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- Custom JS -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/site.js"></script>   
+
+
+
+<!-- MAIN JS for all products -->
+<script src="assets/js/main.js"></script>
+
+<!-- FEATURED PRODUCTS -->
+<script>
+    function renderFeaturedProducts() {
+        const container = document.getElementById("featured-products-row");
+        container.innerHTML = "";
+
+        const featured = window.allProducts.slice(0, 4); // Use shared array
+
+        featured.forEach(p => {
+            container.innerHTML += `
+                <div class="col-6 col-md-3">
+                    <div class="card product-card h-100 p-2">
+                        <img src="${p.image}" class="card-img-top" alt="${p.title}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="product-title">${p.title}</h5>
+                            <p class="product-category text-muted">${p.category}</p>
+                            <p class="fw-bold text-dark">PKR ${p.price}</p>
+
+                            <input type="number" class="form-control mb-2" 
+                                   min="1" value="1" id="qty-${p.id}">
+
+                            <button class="btn btn-success w-100 mt-auto"
+                                onclick="addFeaturedToCart(${p.id})">
+                                Add to Cart
+                            </button>
+
+                            <a href="product-details.html?id=${p.id}" 
+                               class="btn btn-outline-primary w-100 mt-2">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    function addFeaturedToCart(id) {
+        const product = window.allProducts.find(p => p.id === id);
+        const qty = parseInt(document.getElementById(`qty-${id}`).value);
+
+        const item = {
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            image: product.image,
+            qty: qty
+        };
+
+        // Add to cart function from main.js
+        addToCart(item);
+
+        // Show toast
+        const toastElement = document.getElementById("cartToast");
+        if (toastElement) {
+            new bootstrap.Toast(toastElement).show();
+        }
+
+        // Update cart badge
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        document.querySelectorAll("#cart-count").forEach(el => {
+            el.textContent = cart.reduce((sum, i) => sum + i.qty, 0);
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", renderFeaturedProducts);
+</script>
+
+
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const observer = new IntersectionObserver((entries) => {
